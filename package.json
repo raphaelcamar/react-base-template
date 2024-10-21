@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "description": "base template for new projects on react",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "webpack server --config webpack.dev.js",
+    "build": "webpack --config webpack.prod.js && npx msw init public"
   },
   "author": "Raphael Camargo",
   "license": "ISC",
@@ -12,6 +13,15 @@
     "react-dom": "^18.3.1"
   },
   "devDependencies": {
-    "webpack": "^5.95.0"
+    "babel-core": "^6.26.3",
+    "babel-loader": "^9.2.1",
+    "babel-preset-react": "^6.24.1",
+    "dotenv-webpack": "^8.1.0",
+    "html-webpack-plugin": "^5.6.2",
+    "webpack": "^5.95.0",
+    "webpack-bundle-analyzer": "^4.10.2",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^5.1.0",
+    "webpack-merge": "^6.0.1"
   }
 }
