@@ -50,16 +50,11 @@ module.exports = {
     port: 3000,
   },
   optimization: {
-    runtimeChunk: true,
     minimize: true,
     emitOnErrors: true,
-    innerGraph: false,
     mangleExports: 'size',
     mangleWasmImports: true,
     moduleIds: 'named'
-  },
-  performance: {
-    hints: false,
   },
   plugins: [
     new HtmlWebpackPlugin({
