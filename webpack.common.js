@@ -9,7 +9,7 @@ const envFile = './.env'
 
 module.exports = {
   entry: {
-    app: './src/main/index.tsx'
+    app: './src/index.tsx'
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
@@ -36,9 +36,10 @@ module.exports = {
       },
       {
         test: /\.json$/,
-        loader: 'json-loader'
+        type: 'json'
       }
     ],
+    
   },
   devServer: {
     static: './public',
@@ -59,7 +60,6 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, 'public/index.html'),
-      favicon: path.resolve(__dirname, 'public/img/favicon.ico'),
     }),
     new webpack.ProvidePlugin({
       process: 'process/browser',
@@ -70,6 +70,6 @@ module.exports = {
       safe: true,
       systemvars: true
     }),
-    new BundleAnalyzerPlugin(),
+    new BundleAnalyzerPlugin({ analyzerMode: 'disabled' }),
   ]
 }
